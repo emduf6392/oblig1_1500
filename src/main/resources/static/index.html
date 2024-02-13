@@ -3,14 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <title>Oblig 1 - Webprogrammering</title>
-    <script src="index.js"></script>
+    <script src="index.js"></script> <!-- Linker HTML-filen sammen med JS-filen -->
 </head>
 
 <body>
 <h1>Bestilling av kinobilletter</h1>
 
 <section>
-    <label>Velg film:</label>
+    <label for="FilmDropDown">Velg film:</label>
+    <select id="FilmDropDown" name="FilmValg">
+        <option>Film 1</option>
+        <option>Film 2</option>
+        <option>Film 3</option>
+    </select>
 </section>
 
 <section>
