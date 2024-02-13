@@ -10,4 +10,4 @@ Github repo URL: https://github.com/emduf6392/oblig1_1500
 Fullt navn: Emilie Kristiansen Dufseth
 
 Kort beskrivelse av applikasjonen: 
-hh
+
