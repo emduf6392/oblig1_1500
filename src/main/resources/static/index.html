@@ -9,8 +9,7 @@
 
 <h1>Bestilling av kinobilletter</h1>
 
-<section>
-    <label for="vfilm">Velg film:</label>
+<form> Velg film:
     <select id="vfilm">
         <option disabled selected>Velg film her</option>
         <option value="wonka">Wonka</option>
@@ -18,49 +17,32 @@
         <option value="perfect">Perfect Days</option>
         <option value="madame">Madame Web</option>
     </select>
-</section>
-
+</form>
 <br>
 
-<section>
-    <label for="antall">Antall:</label>
-    <input id="antall" type="number" min="1" max="9">
-</section>
-
+<form> Antall:
+    <input type="number" id="antall" min="1" max="9">
+</form>
 <br>
 
+<!-- Tabell for å få inputbokser på linje -->
 <table>
-    <label for="fnavn">Fornavn:</label>
-    <input id="fnavn" type="text">
-
-    <label for="enavn">Etternavn:</label>
-    <input id="enavn" type="text">
-
-    <label for="telnr"l>Telefonnr:</label>
-    <input id="telnr" type="tel">
-
-    <label for="epost">Epost:</label>
-    <input id="epost" type="email">
+    <tr><td>Fornavn:</td><td><input type="text" id="fnavn"/></td></tr>
+    <tr><td>Etternavn:</td><td><input type="text" id="enavn"/></td></tr>
+    <tr><td>Telefonnr:</td><td><input type="tel" id="telnr"/></td></tr>
+    <tr><td>Epost:</td><td><input type="email" id="epost"/></td></tr>
 </table>
 
-<table>
-    <tr><td>Navn</td><td><input type="text" id="navn"/></td></tr>
-    <tr><td>Adresse</td><td><input type="text" id="adresse"/></td></tr>
-    <tr><td>Telefonnr</td><td><input type="text" id="telefonnr"/></td></tr>
-    <tr><td><button onclick="registrer()">Registrer</button></td></tr>
-</table>
 
-<section>
-    <button>Kjøp billett</button>
-</section>
+<button>
+    Kjøp billett
+</button>
 
-<section>
-    <h2>Alle billetter</h2>
-</section>
+<h2>Alle billetter</h2>
 
-<section>
-    <button>Slett alle billettene</button>
-</section>
+<button>
+    Slett alle billettene
+</button>
 
 </body>
 
