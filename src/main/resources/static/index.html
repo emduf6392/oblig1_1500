@@ -1,79 +1,11 @@
-<!--<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Oblig 1 - Webprogrammering</title>
-    <script type=application/javascript src="index.js"></script>
-    <style>
-        .error {
-            color: red;
-        }
-    </style>
-</head>
-<body>
-
-<h1>Bestilling av kinobilletter</h1>
-
-<form> Velg film:
-    <span id="errorFilm" class="error"></span>
-    <select id="vfilm">
-        <option disabled selected>Velg film her</option>
-        <option value="wonka">Wonka</option>
-        <option value="bobmarley">Bob Marley: One Love</option>
-        <option value="perfect">Perfect Days</option>
-        <option value="madame">Madame Web</option>
-    </select>
-</form>
-<br>
-
-<form> Antall:
-    <label for="antall"></label>
-    <input type="number" id="antall" min="1" max="9">
-    <span id="errorAntall" class="error"></span>
-</form>
-<br>
-
-
-<table>
-    <tr><td>Fornavn:</td><td>
-        <input type="text" id="fornavn"/></td><td>
-        <span id="errorFornavn" class="error"></span></td></tr>
-    <tr><td>Etternavn:</td><td>
-        <input type="text" id="etternavn"/></td><td>
-        <span id="errorEtternavn" class="error"></span></td></tr>
-    <tr><td>Telefonnr:</td><td>
-        <input type="tel" id="telefonnummer"/></td><td>
-        <span id="errorTelefonnummer" class="error"></span></td></tr>
-    <tr><td>Epost:</td><td>
-        <input type="email" id="epost"/></td><td>
-        <span id="errorEpost" class="error"></span></td></tr>
-</table>
-
-
-<button onclick="nyBestilling()">
-    Kjøp billett
-</button>
-
-<h2>Alle billetter</h2>
-
-<div id="mineBilletter"></div>
-
-<button onclick="slettAlle()">
-    Slett alle billettene
-</button>
-
-</body>
-
-</html>
-
--->
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>Oblig 1 - Webprogrammering</title>
+    <!--Kobler sammen med js.filen -->
     <script type="application/javascript" src="index.js"></script>
+    <!--Viser feilmeldinger i rødt-->
     <style>
         .error {
             color: red;
@@ -86,6 +18,7 @@
 
 <form> Velg film:
     <span id="errorFilm" class="error"></span>
+    <!--Dropdown liste for filmer-->
     <select id="film">
         <option disabled selected>Velg film her</option>
         <option value="Wonka">Wonka</option>
@@ -101,6 +34,7 @@
     <span id="errorAntall" class="error"></span>
 </form>
 <br>
+<!--Tabell for å få alt på linje under hverandre-->
 <table>
     <tr><td>Fornavn:</td><td>
         <input type="text" id="fornavn"/></td><td>
@@ -120,14 +54,17 @@
 </table>
 <br>
 
+<!-- Knapp for å bestille kinobillett(er)-->
 <button onclick="nyBestilling()">
     Kjøp billett
 </button>
 
 <h2>Alle billetter</h2>
 
+<!--Container for å vise alle kinobilletter som er bestilt-->
 <div id="mineBilletter"></div>
 <br>
+<!--Knapp for å slette alle billettene-->
 <button onclick="slettAlle()">
     Slett alle billetter
 </button>
