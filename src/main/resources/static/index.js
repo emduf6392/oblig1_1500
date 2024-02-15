@@ -1,10 +1,10 @@
 let billetter = [];
 function nyBestilling() {
-    let film = document.getElementById("vfilm").value;
+    let film = document.getElementById("film").value;
     let antall = document.getElementById("antall").value;
-    let fornavn = document.getElementById("fnavn").value;
-    let etternavn = document.getElementById("enavn").value;
-    let telefonnummer = document.getElementById("telnr").value;
+    let fornavn = document.getElementById("fornavn").value;
+    let etternavn = document.getElementById("etternavn").value;
+    let telefonnummer = document.getElementById("telefonnummer").value;
     let epost = document.getElementById("epost").value;
 
     let erRiktig = true;
@@ -15,7 +15,7 @@ function nyBestilling() {
         skjulError("errorFilm")
     }
     if (!sjekkAntall(antall)) {
-        visError("errorAntall", "Velg antall billetter");
+        visError("errorAntall", "Velg antall kinobilletter");
         erRiktig = false;
     } else {
         skjulError("errorAntall")
@@ -33,13 +33,13 @@ function nyBestilling() {
         skjulError("errorEtternavn")
     }
     if (!sjekkTelefonnummer(telefonnummer)) {
-        visError("errorTelefonnummer", "Skriv inn gyldig telefonnummer");
+        visError("errorTelefonnummer", "Skriv inn et telefonnummer");
         erRiktig = false;
     } else {
         skjulError("errorTelefonnummer")
     }
     if (!sjekkEpost(epost)) {
-        visError("errorEpost", "Skriv inn gyldig epost");
+        visError("errorEpost", "Skriv inn en epost-adresse");
         erRiktig = false;
     } else {
         skjulError("errorEpost")
@@ -62,6 +62,7 @@ function nyBestilling() {
         visBilletter();
     }
 }
+
 function resetInput(){
     const input = document.querySelectorAll('input[type="number"], input[type="text"]');
     input.forEach(function (input) {
@@ -79,7 +80,8 @@ function visBilletter() {
     }
     document.getElementById("mineBilletter").innerHTML=ut;
 }
-function sjekkFilm(film) { //denne fikk jeg ikke til å dukke opp da "label" velg film her er "valgt"
+
+function sjekkFilm(film) {
     let valgtFilm = film.value;
     return film !== "";
 }
@@ -99,6 +101,7 @@ function sjekkEpost(epost) {
     let eposttegn = /^[^\s@]+@[^\s@]+\.[^\s@]+$/; //tatt fra chatGPT
     return eposttegn.test(epost);
 }
+
 function visError(elementId, message) {
     let errorElement = document.getElementById(elementId);
     errorElement.textContent = message;
@@ -111,8 +114,8 @@ function skjulError(elementId) {
     errorElement.style.display = "none";
 }
 
-function slettAlle(){
+function slettAlle(){ //tømmer arrayet
     billetter = [];
     console.log("Alle billetter er slettet");
-    document.getElementById("mineBilletter").innerHTML="";
+    document.getElementById("mineBilletter").innerHTML=""; //sletter alle gamle billetter
 }
