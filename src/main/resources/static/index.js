@@ -1,4 +1,4 @@
-let billetter = [];
+let billetter = []; //Definerer array for å lagre kinobilletter
 function nyBestilling() {
     let film = document.getElementById("film").value;
     let antall = document.getElementById("antall").value;
@@ -7,7 +7,9 @@ function nyBestilling() {
     let telefonnummer = document.getElementById("telefonnummer").value;
     let epost = document.getElementById("epost").value;
 
+
     let erRiktig = true;
+    //Validering av input:
     if (!sjekkFilm(film)) {
         visError("errorFilm", "Du må velge en film");
         erRiktig = false;
@@ -45,6 +47,7 @@ function nyBestilling() {
         skjulError("errorEpost")
     }
 
+    //Hvis all input er korrekt opprettes et billett-objekt:
     const billett = {
         film: film,
         antall: antall,
@@ -54,21 +57,24 @@ function nyBestilling() {
         epost: epost,
     };
 
+    //Legger billett-objektet i arrayet
     if (erRiktig === true) {
         billetter.push(billett);
         resetInput();
-
         console.log("Ny bestilling registrert");
         visBilletter();
     }
 }
 
+//Funksjon som tilbakestiller inputfelter:
 function resetInput(){
     const input = document.querySelectorAll('input[type="number"], input[type="text"]');
     input.forEach(function (input) {
         input.value = "";
     });
 }
+
+// Viser alle billettene i en tabell:
 function visBilletter() {
     let ut = "<table><tr>" +
         "<th>Film</th><th>Antall</th><th>Fornavn</th><th>Etternavn</th><th>Telefonnummer</th><th>E-post</th>" +
@@ -114,7 +120,7 @@ function skjulError(elementId) {
     errorElement.style.display = "none";
 }
 
-function slettAlle(){ //tømmer arrayet
+function slettAlle(){ //tømmer arrayet og sletter alle billetter
     billetter = [];
     console.log("Alle billetter er slettet");
     document.getElementById("mineBilletter").innerHTML=""; //sletter alle gamle billetter
